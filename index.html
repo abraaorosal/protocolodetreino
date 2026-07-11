@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="description" content="Protocolo Men's Physique Premium de Abraão Henrique — controle de treinos, cargas e evolução." />
   <title>Protocolo de Treino | Abraão Henrique</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -37,11 +39,43 @@
         <p>Seu plano Men's Physique com execução guiada, checklist por exercício, cargas, repetições e progresso salvo automaticamente.</p>
         <div class="identity-row">
           <div class="avatar">AH</div>
-          <div><strong>Abraão Henrique</strong><span>80,7 kg · 1,81 m · 6x por semana</span></div>
+          <div><strong>Abraão Henrique</strong><span id="profileSummary">80,7 kg · 1,81 m · 6x por semana</span></div>
         </div>
       </div>
 
       <div class="hero-panel glass-card">
+        <div class="current-weight-card">
+          <div class="current-weight-copy">
+            <span class="label">PESO ATUAL</span>
+            <strong><span id="currentWeightDisplay">80,7</span> <small>kg</small></strong>
+            <span class="weight-updated" id="currentWeightUpdated">Informe seu peso de hoje</span>
+          </div>
+          <div class="weight-editor">
+            <label class="sr-only" for="currentWeightInput">Peso atual em quilogramas</label>
+            <div class="weight-input-wrap">
+              <input id="currentWeightInput" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 80,7" aria-label="Peso atual em quilogramas" />
+              <span>kg</span>
+            </div>
+            <button class="weight-save-button" id="saveCurrentWeightButton" type="button">Salvar peso</button>
+          </div>
+        </div>
+        <div class="panel-divider"></div>
+        <div class="protocol-countdown-card">
+          <div class="countdown-number" aria-hidden="true">
+            <strong id="daysRemaining">56</strong>
+            <span>dias</span>
+          </div>
+          <div class="countdown-copy">
+            <span class="label">ATÉ TROCAR O PROTOCOLO</span>
+            <strong id="countdownStatus">Defina a data de início</strong>
+            <small id="protocolDayLabel">Ciclo de 8 semanas · 56 dias</small>
+          </div>
+          <label class="start-date-field" for="protocolStartInput">
+            <span>INÍCIO</span>
+            <input id="protocolStartInput" type="date" aria-label="Data de início do protocolo" />
+          </label>
+        </div>
+        <div class="panel-divider"></div>
         <div class="hero-panel-top">
           <div>
             <span class="label">PROGRESSO DA SEMANA</span>
@@ -116,7 +150,7 @@
         <div><span class="eyebrow">EVOLUÇÃO</span><h2>Indicadores semanais</h2></div>
       </div>
       <div class="evolution-grid">
-        <label><span>Peso (kg)</span><input id="weightInput" type="number" step="0.1" inputmode="decimal" placeholder="80,7" /></label>
+        <label><span>Peso da semana (kg)</span><input id="weightInput" type="text" inputmode="decimal" autocomplete="off" placeholder="80,7" /></label>
         <label><span>Cintura (cm)</span><input id="waistInput" type="number" step="0.1" inputmode="decimal" placeholder="Ex.: 82" /></label>
         <label><span>Força percebida</span><select id="strengthInput"><option value="">Selecionar</option><option>Subiu</option><option>Manteve</option><option>Caiu</option></select></label>
         <label class="wide"><span>Observação visual</span><textarea id="visualInput" rows="3" placeholder="Definição, volume, recuperação, jiu-jítsu..."></textarea></label>
