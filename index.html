@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Protocolo Men's Physique Premium de Abraão Henrique — controle de treinos, cargas e evolução." />
+  <title>Protocolo de Treino | Abraão Henrique</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Ir para o início">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img"><path d="M8 10h8l8 18 8-18h8L28 39h-8L8 10Z"/><path d="M17 10h14l-3 7h-8l-3-7Z"/></svg>
+      </span>
+      <span>
+        <strong>AH · PHYSIQUE</strong>
+        <small>Premium Training Protocol</small>
+      </span>
+    </a>
+    <button class="icon-button" id="settingsButton" aria-label="Abrir configurações" title="Configurações">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.08A1.7 1.7 0 0 0 8.97 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3v-4h.08A1.7 1.7 0 0 0 4.6 8.97a1.7 1.7 0 0 0-.34-1.88l-.06-.06L7.03 4.2l.06.06a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.04V3h4v.08a1.7 1.7 0 0 0 1.03 1.52 1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 20.96 10H21v4h-.08A1.7 1.7 0 0 0 19.4 15Z"/></svg>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <span class="eyebrow">PROTOCOLO PERSONALIZADO · 8 SEMANAS</span>
+        <h1>Construa o <em>V‑Taper</em>.<br />Registre cada avanço.</h1>
+        <p>Seu plano Men's Physique com execução guiada, checklist por exercício, cargas, repetições e progresso salvo automaticamente.</p>
+        <div class="identity-row">
+          <div class="avatar">AH</div>
+          <div><strong>Abraão Henrique</strong><span>80,7 kg · 1,81 m · 6x por semana</span></div>
+        </div>
+      </div>
+
+      <div class="hero-panel glass-card">
+        <div class="hero-panel-top">
+          <div>
+            <span class="label">PROGRESSO DA SEMANA</span>
+            <strong id="weekProgressLabel">0%</strong>
+          </div>
+          <div class="ring" id="weekProgressRing" style="--progress:0"><span id="weekProgressRingText">0%</span></div>
+        </div>
+        <div class="progress-track"><span id="weekProgressBar"></span></div>
+        <div class="stats-grid">
+          <div><span>Concluídos</span><strong id="completedCount">0</strong></div>
+          <div><span>Exercícios</span><strong id="totalCount">52</strong></div>
+          <div><span>Fase atual</span><strong id="phaseShort">F1</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="control-zone shell">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CICLO DE TREINAMENTO</span>
+          <h2>Sua semana, sob controle</h2>
+        </div>
+        <div class="week-control">
+          <label for="weekSelect">Semana</label>
+          <select id="weekSelect" aria-label="Selecionar semana do protocolo">
+            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="phase-banner" id="phaseBanner">
+        <span id="phasePill">FASE 1</span>
+        <div><strong id="phaseTitle">Adaptação técnica</strong><p id="phaseDescription">Controle de fadiga, 2 RIR e técnica impecável.</p></div>
+      </div>
+
+      <nav class="day-tabs" id="dayTabs" aria-label="Dias de treino"></nav>
+    </section>
+
+    <section class="workout-section shell" id="workoutSection">
+      <div class="workout-header">
+        <div>
+          <span class="eyebrow" id="activeDayLabel">SEGUNDA-FEIRA</span>
+          <h2 id="workoutTitle">Peitoral Superior + Bíceps</h2>
+          <p id="workoutObjective">Preencher o peitoral clavicular e ampliar o tronco.</p>
+        </div>
+        <div class="day-progress-card">
+          <span>Treino concluído</span>
+          <strong id="dayProgressLabel">0 de 10</strong>
+          <div class="progress-track compact"><span id="dayProgressBar"></span></div>
+        </div>
+      </div>
+
+      <div class="coach-card" id="coachCard">
+        <div class="coach-icon">✦</div>
+        <div><span>DIRETRIZ DO COACH</span><p id="coachText"></p></div>
+      </div>
+
+      <div class="exercise-list" id="exerciseList"></div>
+
+      <div class="workout-actions">
+        <button class="secondary-button" id="resetDayButton">Limpar treino do dia</button>
+        <button class="primary-button" id="completeDayButton">
+          <span>Marcar treino completo</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="evolution shell">
+      <div class="section-heading">
+        <div><span class="eyebrow">EVOLUÇÃO</span><h2>Indicadores semanais</h2></div>
+      </div>
+      <div class="evolution-grid">
+        <label><span>Peso (kg)</span><input id="weightInput" type="number" step="0.1" inputmode="decimal" placeholder="80,7" /></label>
+        <label><span>Cintura (cm)</span><input id="waistInput" type="number" step="0.1" inputmode="decimal" placeholder="Ex.: 82" /></label>
+        <label><span>Força percebida</span><select id="strengthInput"><option value="">Selecionar</option><option>Subiu</option><option>Manteve</option><option>Caiu</option></select></label>
+        <label class="wide"><span>Observação visual</span><textarea id="visualInput" rows="3" placeholder="Definição, volume, recuperação, jiu-jítsu..."></textarea></label>
+      </div>
+      <p class="autosave"><span></span> Salvo automaticamente neste dispositivo</p>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <span>AH · PHYSIQUE PROTOCOL</span>
+    <p>Consistência vence intensidade sem direção.</p>
+  </footer>
+
+  <dialog id="settingsDialog" class="settings-dialog">
+    <form method="dialog">
+      <div class="dialog-head">
+        <div><span class="eyebrow">PREFERÊNCIAS</span><h2>Configurações</h2></div>
+        <button class="icon-button close-button" value="cancel" aria-label="Fechar">×</button>
+      </div>
+      <label class="switch-row"><span><strong>Modo compacto</strong><small>Exibe mais exercícios na tela</small></span><input type="checkbox" id="compactToggle" /></label>
+      <label class="switch-row"><span><strong>Confirmar antes de limpar</strong><small>Evita apagar marcações por engano</small></span><input type="checkbox" id="confirmToggle" checked /></label>
+      <button type="button" class="danger-button" id="resetAllButton">Apagar todo o progresso</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
