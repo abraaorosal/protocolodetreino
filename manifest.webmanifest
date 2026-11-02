@@ -1,10 +1,17 @@
 {
-  "name": "Protocolo Men's Physique — Abraão Henrique",
-  "short_name": "AH Physique",
+  "name": "Hybrid Athlete — Treino de Abraão Henrique",
+  "short_name": "AH Hybrid",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#070a12",
   "theme_color": "#0b1020",
-  "description": "Controle premium do protocolo de treino de 8 semanas.",
-  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "description": "Musculação todos os dias, jiu-jítsu 3x por semana, força e hipertrofia em 8 semanas.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-const CACHE='ah-physique-v4';
+const CACHE='ah-hybrid-v5';
 const ASSETS=['./','./index.html','./styles.css','./controls.css','./mobile.css','./app.js','./enhancements.js','./countdown.js','./favicon.svg','./manifest.webmanifest'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)))});
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

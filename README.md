@@ -1,29 +1,27 @@
-# Protocolo de Treino — Men's Physique Premium
+# Hybrid Athlete 3.0 — Abraão Henrique
 
-Aplicação web personalizada para acompanhamento do protocolo de treino de **Abraão Henrique**.
+Aplicação web para **musculação nos 7 dias da semana**, com 4 treinos principais e 3 sessões leves de pesos nos dias de jiu-jítsu (segunda, quarta e sexta às 12h).
 
-## Recursos
+## Divisão
+- Segunda: panturrilhas + core (leve) e jiu-jítsu.
+- Terça: pernas A — força.
+- Quarta: ombros + braços (leve) e jiu-jítsu.
+- Quinta: superiores A — força.
+- Sexta: core + estabilizadores (leve) e jiu-jítsu.
+- Sábado: pernas B — hipertrofia.
+- Domingo: superiores B — hipertrofia.
 
-- Treinos organizados por dia da semana;
-- Checklist de cada exercício;
-- Registro de carga e repetições realizadas;
-- Progresso diário e semanal;
-- Periodização completa de 8 semanas;
-- Registro semanal de peso, cintura, força e observação visual;
-- Dados salvos automaticamente no navegador;
-- Visual responsivo, instalável e disponível offline;
-- Favicon personalizado AH Physique.
-
-## Executar localmente
-
-Como o projeto é estático, basta abrir `index.html` ou iniciar um servidor local:
-
-```bash
-python3 -m http.server 8000
-```
-
-Depois acesse `http://localhost:8000`.
+## Funcionalidades
+- Treinos com séries, repetições, RPE e pausas.
+- Checklist e registro de cargas e repetições.
+- Periodização de 8 semanas e deload automático na semana 8.
+- Registro semanal de peso, cintura, força e observações.
+- Histórico original preservado no navegador em `ah-physique-v1`, sem reutilizar as marcações para novos exercícios.
+- Ciclo novo com data própria, dados no navegador e suporte offline.
 
 ## Publicação
+O workflow `.github/workflows/pages.yml` publica automaticamente a branch `main` pelo GitHub Pages.
 
-O workflow em `.github/workflows/pages.yml` publica automaticamente o projeto no GitHub Pages a cada alteração na branch `main`.
+Site: https://abraaorosal.github.io/protocolodetreino/
+
+**Nota:** os dias leves são sessões submáximas. Ajuste o plano conforme recuperação e intensidade das aulas de jiu-jítsu; doença, lesões e fadiga significativa podem requerer descanso completo.

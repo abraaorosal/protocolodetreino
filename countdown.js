@@ -1,9 +1,9 @@
 (()=>{
-const D=56,$=s=>document.querySelector(s),P=()=>window.AHProfile.get(),save=()=>window.AHProfile.save(),toast=m=>window.AHProfile.toast(m);
+const D=56,$=s=>document.querySelector(s),P=()=>window.AHProfile.get(),save=()=>window.AHProfile.save(),toast=m=>window.AHProfile.toast(m),today=()=>{const d=new Date(),o=d.getTimezoneOffset();return new Date(d-o*60000).toISOString().slice(0,10)};
 function render(){
- const p=P(),input=$('#protocolStartInput');input.value=p.start||'';
- if(!p.start){$('#daysRemaining').textContent='—';$('#countdownStatus').textContent='Defina a data de início';$('#protocolDayLabel').textContent='Ciclo de 8 semanas · 56 dias';return}
- const start=new Date(`${p.start}T00:00:00`),now=new Date();now.setHours(0,0,0,0);if(Number.isNaN(start.getTime()))return;
+ const p=P(),input=$('#protocolStartInput');if(!('hybridStart' in p)){p.hybridStart=today();save()}input.value=p.hybridStart||'';
+ if(!p.hybridStart){$('#daysRemaining').textContent='—';$('#countdownStatus').textContent='Defina a data de início';$('#protocolDayLabel').textContent='Ciclo de 8 semanas · 56 dias';return}
+ const start=new Date(`${p.hybridStart}T00:00:00`),now=new Date();now.setHours(0,0,0,0);if(Number.isNaN(start.getTime()))return;
  const end=new Date(start);end.setDate(end.getDate()+D);
  const elapsed=Math.floor((now-start)/86400000),left=Math.ceil((end-now)/86400000),day=Math.min(Math.max(elapsed+1,1),D),week=Math.min(Math.max(Math.floor(Math.max(elapsed,0)/7)+1,1),8),date=end.toLocaleDateString('pt-BR');
  if(left>1){$('#daysRemaining').textContent=left;$('#countdownStatus').textContent=`Troca prevista para ${date}`}
@@ -14,5 +14,5 @@ function render(){
  else if(elapsed<D)$('#protocolDayLabel').textContent=`Dia ${day} de ${D} · Semana atual ${week}`;
  else $('#protocolDayLabel').textContent='Ciclo concluído · escolha uma nova data de início';
 }
-$('#protocolStartInput').addEventListener('change',e=>{const p=P();p.start=e.target.value;save();render();toast('Data do protocolo atualizada')});render();
+$('#protocolStartInput').addEventListener('change',e=>{const p=P();p.hybridStart=e.target.value;save();render();toast('Data do protocolo atualizada')});render();
 })();
